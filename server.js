@@ -3,9 +3,9 @@ require('dotenv').config();
 const mqtt = require('mqtt')
 
 let units = [   {unit: 'A',plastic: 12,metal: 25,paper: 13,others: 45},
-                {unit: 'B',plastic: 1,metal: 2,paper: 3,others: 4}      ]
+                {unit: 'B',plastic: 21,metal: 12,paper: 33,others: 34}      ]
 
-mqtt_port = 'mqtt://broker.hivemq.com'
+const mqtt_port = 'mqtt://broker.hivemq.com'
 let client = mqtt.connect(mqtt_port)
 
 client.on('connect', ()=>{

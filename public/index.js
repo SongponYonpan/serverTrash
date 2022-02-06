@@ -21,4 +21,4 @@ async function getData() {
 
 getData();
 
-setInterval(getData,60000);
+setInterval(getData,600000);
