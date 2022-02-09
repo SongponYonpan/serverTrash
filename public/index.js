@@ -1,12 +1,13 @@
 const opt = {
     method: 'GET',
     headers: {'Content-Type': 'application/json'}
-//     //body: JSON.stringify(data)
+    //body: JSON.stringify(data)
 }
 
 async function getData() {
     const response = await fetch('/trash', opt);
     const data =  await response.json();
+    console.log(data);
     data.forEach(element => {
         document.getElementById(`barTrash${element.unit}/plastic`).setAttribute("style", `width: ${element.plastic}%;`);
         document.getElementById(`barTrash${element.unit}/metal`).setAttribute("style", `width: ${element.metal}%;`);
@@ -21,4 +22,4 @@ async function getData() {
 
 getData();
 
-setInterval(getData,600000);
+setInterval(getData,5000);
