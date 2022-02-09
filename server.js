@@ -3,7 +3,7 @@ require('dotenv').config();
 const mqtt = require('mqtt')
 
 let units = [   {unit: 'A',plastic: 12,metal: 25,paper: 13,others: 45},
-                {unit: 'B',plastic: 21,metal: 12,paper: 33,others: 34}      ]
+                {unit: 'B',plastic: 21,metal: 12,paper: 33,others: 34}  ]
 
 const mqtt_port = 'mqtt://broker.hivemq.com'
 let client = mqtt.connect(mqtt_port)
@@ -24,8 +24,7 @@ client.on('message', (topic,message)=>{
     } else {
         units[1] = data
         console.log(units[1])
-    }
-    
+    } 
 })
 
 const app = express();
