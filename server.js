@@ -1,5 +1,7 @@
 const express = require('express');
+
 require('dotenv').config();
+
 const mqtt = require('mqtt')
 
 let units = [   {unit: 'A',plastic: 12,metal: 25,paper: 13,others: 45},
