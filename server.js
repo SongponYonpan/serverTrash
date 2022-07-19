@@ -1,6 +1,7 @@
 const express = require('express');
 require('dotenv').config();
 const mqtt = require('mqtt')
+const cors = require('cors')
 
 //let units = [   {unit: 'A',plastic: 12,metal: 25,paper: 13,others: 45},
 //                {unit: 'B',plastic: 1,metal: 2,paper: 3,others: 4}      ]
@@ -36,6 +37,7 @@ client.on('message', (topic,message)=>{
 const app = express();
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`listening at ${port}`));
+app.use(cors())
 app.use(express.static('public'))
 app.use(express.json({ limit: '1mb'}))
 
